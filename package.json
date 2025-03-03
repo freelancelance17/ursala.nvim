@@ -1,20 +1,39 @@
 {
-  "name": "ursala",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "ursala.nvim",
+  "version": "0.1.0",
+  "description": "TypeScript Neovim plugin",
+  "main": "rplugin/node/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -p tsconfig.json",
+    "clean": "rimraf lib",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "test": "jest",
+    "prepare": "npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "neovim",
+    "nvim",
+    "plugin",
+    "typescript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
-    "@types/node": "^22.13.8",
-    "neovim": "^5.3.0",
-    "typescript": "^5.8.2"
+    "@types/node": "^18.16.0",
+    "handlebars": "^4.7.8",
+    "neovim": "^4.10.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "ts-node": "^10.9.2"
+    "@types/jest": "^29.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "eslint": "^8.39.0",
+    "jest": "^29.5.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.0",
+    "ts-jest": "^29.1.0"
   }
 }
